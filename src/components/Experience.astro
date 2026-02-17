@@ -3,46 +3,54 @@ const experiences = [
   {
     company: "Orbex Group",
     role: "Senior Product Manager",
-    period: "2024 – Present",
-    badge: "Robotics",
-    description: "Leading product strategy for next-generation autonomous robotics and hardware systems. Wearing multiple hats — product, marketing, business analysis — to help the company scale from startup to market leader.",
+    period: "Oct 2023 – Present",
+    location: "Remote",
+    badge: "Automation",
+    description: "Driving product strategy for motorized drive solutions in AGV/AMR applications. Wearing multiple hats — product, business analysis, marketing, CRM — to scale a high-growth robotics company.",
     highlights: [
-      "Defining roadmap for autonomous hardware systems entering the industrial robotics market",
-      "Implementing CRM, analytics, and processes to support company growth",
-      "Go-to-market strategy and product positioning for B2B automation",
-      "Cross-functional leadership across engineering, sales, and operations"
+      "Designed and implemented inaugural PDM/PLM framework from scratch, reducing time-to-market by 15% (12 → 10 months)",
+      "Developed first 5-year product roadmap for motorized drive solutions, securing $1M in funding and aligning towards 4x growth",
+      "Automated reporting workflows with Power BI dashboards, cutting analysis time by 40%",
+      "Led trade show strategies and 50+ customer interviews/OEM analyses, increasing quality leads by 25%",
+      "Implemented CRM system and optimized ad campaigns, reducing junk leads by 60%"
     ],
-    tags: ["Autonomous Systems", "Product Strategy", "B2B", "Go-to-Market", "CRM"],
+    products: "Wheel Drives (AGV/AMR/UGV), BLDC motors, slip rings, rotation solutions for robotics, drones, and humanoids",
+    tags: ["Robotics", "AGV/AMR", "Product Strategy", "Power BI", "CRM", "GTM"],
     icon: `<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`
   },
   {
-    company: "Viessmann Climate Solutions",
-    role: "Product Manager",
-    period: "2023 – 2024",
+    company: "Viessmann",
+    role: "North America Product Line Manager",
+    period: "Jan 2021 – Aug 2023",
+    location: "Remote",
     badge: "Climate Tech",
-    description: "Managed product strategy for climate and energy technology solutions, driving the transition to sustainable heating and energy systems for residential and commercial markets.",
+    description: "Directed $200M+ NA portfolio for residential/commercial HVAC markets, launching data-informed products across digital and hardware to drive sustainable heating and energy solutions.",
     highlights: [
-      "Led product lifecycle from concept to market for energy-efficient systems",
-      "Cross-functional collaboration with engineering, marketing, and sales teams",
-      "Market analysis and competitive positioning in the evolving climate tech space",
-      "Stakeholder management across global teams"
+      "Launched 5 data-informed products (3 digital + 2 hardware) driving $5M incremental revenue and 10% YoY growth",
+      "Orchestrated market research, competitive intelligence, and 30+ customer interviews to align with market demands",
+      "Shopped product concepts to early adopters and contractors, increasing satisfaction by 15% through iterative A/B testing",
+      "Crafted 5-year strategic roadmap to double revenue, leveraging VoC insights for phased releases"
     ],
-    tags: ["Climate Tech", "Energy Systems", "Product Lifecycle", "Sustainability"],
+    products: "ViCare consumer app, ViGuide contractor portal, ViPlan design tool, connected heat pumps/climate systems",
+    tags: ["$200M+ Portfolio", "HVAC", "Digital Products", "VoC", "A/B Testing"],
     icon: `<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`
   },
   {
     company: "Baker Hughes",
-    role: "RDD Engineer → Product Manager",
-    period: "2012 – 2023",
+    role: "Product Manager / RDD Engineer",
+    period: "2012 – 2020",
+    location: "Houston, TX",
     badge: "Energy Tech",
-    description: "Progressed from Research, Design & Development engineer to product management over 11 years in the energy technology space. Designed drilling products deployed worldwide, then led their commercialization strategy.",
+    description: "Progressed from Research, Design & Development engineer to product management over 8+ years in global energy technology. Designed drilling products deployed worldwide, then led their commercialization strategy.",
     highlights: [
-      "Managed portfolio of drilling products from concept through global commercialization",
-      "Designed hybrid drill bits with focus on customer pain points over ease of manufacture",
+      "Scaled revenues 385% in 12 months through strategic product positioning and customer-focused design",
+      "Managed $275M+ portfolio of drilling products from concept through global commercialization",
+      "Designed hybrid drill bits prioritizing customer pain points over ease of manufacture",
       "Led cross-functional teams through Waterfall, StageGate, and Agile methodologies",
-      "Data-driven product decisions using analytics and customer feedback loops"
+      "Data-driven product decisions using analytics, field data, and customer feedback loops"
     ],
-    tags: ["Product Management", "Engineering Design", "Oil & Gas", "Global Operations"],
+    products: "Hybrid drill bits, fixed cutter bits, roller cone bits, drilling optimization tools",
+    tags: ["$275M+ Portfolio", "Engineering Design", "Oil & Gas", "Global Operations"],
     icon: `<path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`
   }
 ];
@@ -84,6 +92,7 @@ const experiences = [
                   <div>
                     <h3 class="text-xl font-semibold text-text-primary">{exp.company}</h3>
                     <p class="text-accent font-medium text-sm">{exp.role}</p>
+                    <p class="text-text-muted text-xs mt-0.5">{exp.location}</p>
                   </div>
                 </div>
                 <div class="flex items-center gap-3 md:flex-col md:items-end">
@@ -104,6 +113,12 @@ const experiences = [
                   </li>
                 ))}
               </ul>
+
+              <!-- Products -->
+              <div class="bg-bg-elevated rounded-lg px-4 py-3 mb-5">
+                <p class="text-text-muted text-xs uppercase tracking-wider font-mono mb-1">Products</p>
+                <p class="text-text-secondary text-sm">{exp.products}</p>
+              </div>
 
               <div class="flex flex-wrap gap-2">
                 {exp.tags.map((tag) => (

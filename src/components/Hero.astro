@@ -24,20 +24,20 @@
       </span>
     </h1>
 
+    <!-- Subtitle -->
+    <p class="animate-fade-up delay-200 mt-4 text-xl md:text-2xl text-text-secondary font-light">
+      Senior Product Manager — Hardware & Digital Solutions
+    </p>
+
     <!-- Typing effect -->
-    <div class="animate-fade-up delay-200 mt-6 font-mono text-lg md:text-xl text-text-secondary">
+    <div class="animate-fade-up delay-300 mt-4 font-mono text-base md:text-lg text-text-muted">
       <span class="text-accent mr-2">$</span>
       <span id="typed-text"></span>
       <span class="typed-cursor"></span>
     </div>
 
     <!-- Meta row -->
-    <div class="animate-fade-up delay-300 mt-10 flex flex-wrap items-center gap-6 md:gap-10">
-      <div>
-        <p class="text-text-muted text-xs uppercase tracking-wider font-mono">Role</p>
-        <p class="text-text-primary font-medium mt-1">Senior Product Manager</p>
-      </div>
-      <div class="hidden md:block w-px h-10 bg-border"></div>
+    <div class="animate-fade-up delay-400 mt-10 flex flex-wrap items-center gap-6 md:gap-10">
       <div>
         <p class="text-text-muted text-xs uppercase tracking-wider font-mono">Company</p>
         <p class="text-text-primary font-medium mt-1">Orbex Group</p>
@@ -45,12 +45,17 @@
       <div class="hidden md:block w-px h-10 bg-border"></div>
       <div>
         <p class="text-text-muted text-xs uppercase tracking-wider font-mono">Focus</p>
-        <p class="text-text-primary font-medium mt-1">Autonomous Robotics</p>
+        <p class="text-text-primary font-medium mt-1">Automation & Robotics</p>
+      </div>
+      <div class="hidden md:block w-px h-10 bg-border"></div>
+      <div>
+        <p class="text-text-muted text-xs uppercase tracking-wider font-mono">Based In</p>
+        <p class="text-text-primary font-medium mt-1">Colorado Springs, CO</p>
       </div>
     </div>
 
     <!-- CTAs -->
-    <div class="animate-fade-up delay-400 mt-10 flex flex-wrap items-center gap-4">
+    <div class="animate-fade-up delay-500 mt-10 flex flex-wrap items-center gap-4">
       <a
         href="#experience"
         class="group inline-flex items-center gap-2 px-6 py-3 bg-accent text-bg font-medium rounded-lg hover:bg-accent-hover transition-all"
@@ -77,11 +82,11 @@
 </section>
 
 <script>
-  // Typing effect
   const phrases = [
-    "Product Leader × Engineer × Builder",
-    "Turning ideas into products people love",
-    "Hardware meets software meets strategy"
+    "10+ years shipping hardware & digital products",
+    "Scaled revenues 385% in 12 months",
+    "Managed $275M+ product portfolios",
+    "$5M+ in new growth through customer insights"
   ];
   
   const el = document.getElementById('typed-text')!;
@@ -100,7 +105,7 @@
       charIndex++;
     }
     
-    let speed = isDeleting ? 30 : 60;
+    let speed = isDeleting ? 25 : 50;
     
     if (!isDeleting && charIndex === current.length) {
       speed = 2500;
