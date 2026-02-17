@@ -4,71 +4,118 @@ const experiences = [
     company: "Orbex Group",
     role: "Senior Product Manager",
     period: "2024 – Present",
-    description: "Leading product strategy for next-generation autonomous robotics and hardware systems. Wearing multiple hats — product, marketing, business analysis — to help the company scale.",
+    badge: "Robotics",
+    description: "Leading product strategy for next-generation autonomous robotics and hardware systems. Wearing multiple hats — product, marketing, business analysis — to help the company scale from startup to market leader.",
     highlights: [
-      "Defining roadmap for autonomous hardware systems entering the robotics market",
-      "Implementing systems (CRM, analytics) and processes to support company growth",
+      "Defining roadmap for autonomous hardware systems entering the industrial robotics market",
+      "Implementing CRM, analytics, and processes to support company growth",
       "Go-to-market strategy and product positioning for B2B automation",
       "Cross-functional leadership across engineering, sales, and operations"
     ],
-    tags: ["Autonomous Systems", "Product Strategy", "B2B", "Go-to-Market"]
+    tags: ["Autonomous Systems", "Product Strategy", "B2B", "Go-to-Market", "CRM"],
+    icon: `<path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`
+  },
+  {
+    company: "Viessmann Climate Solutions",
+    role: "Product Manager",
+    period: "2023 – 2024",
+    badge: "Climate Tech",
+    description: "Managed product strategy for climate and energy technology solutions, driving the transition to sustainable heating and energy systems for residential and commercial markets.",
+    highlights: [
+      "Led product lifecycle from concept to market for energy-efficient systems",
+      "Cross-functional collaboration with engineering, marketing, and sales teams",
+      "Market analysis and competitive positioning in the evolving climate tech space",
+      "Stakeholder management across global teams"
+    ],
+    tags: ["Climate Tech", "Energy Systems", "Product Lifecycle", "Sustainability"],
+    icon: `<path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`
   },
   {
     company: "Baker Hughes",
-    role: "Product Manager → RDD Engineer",
+    role: "RDD Engineer → Product Manager",
     period: "2012 – 2023",
-    description: "Progressed from Research, Design & Development engineer to product management over 11 years in the energy technology space. Designed drilling products used worldwide.",
+    badge: "Energy Tech",
+    description: "Progressed from Research, Design & Development engineer to product management over 11 years in the energy technology space. Designed drilling products deployed worldwide, then led their commercialization strategy.",
     highlights: [
       "Managed portfolio of drilling products from concept through global commercialization",
       "Designed hybrid drill bits with focus on customer pain points over ease of manufacture",
       "Led cross-functional teams through Waterfall, StageGate, and Agile methodologies",
       "Data-driven product decisions using analytics and customer feedback loops"
     ],
-    tags: ["Product Management", "Engineering Design", "Oil & Gas", "Global Operations"]
+    tags: ["Product Management", "Engineering Design", "Oil & Gas", "Global Operations"],
+    icon: `<path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`
   }
 ];
 ---
 
-<section id="experience" class="py-24 px-6">
-  <div class="max-w-4xl mx-auto">
-    <div data-animate>
-      <p class="text-accent text-sm font-medium tracking-widest uppercase mb-3">Experience</p>
-      <h2 class="text-3xl md:text-4xl font-bold mb-12">
-        Where I've been<span class="text-accent">.</span>
-      </h2>
+<section id="experience" class="py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <!-- Section label -->
+    <div class="section-label" data-animate>
+      <span class="section-number">02</span>
+      <span class="section-line"></span>
+      <span class="section-label-text">Experience</span>
     </div>
 
-    <div class="space-y-8">
-      {experiences.map((exp) => (
-        <div data-animate class="group bg-bg-card border border-border rounded-xl p-8 hover:border-accent/30 transition-colors">
-          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
-            <div>
-              <h3 class="text-xl font-semibold text-text-primary">{exp.company}</h3>
-              <p class="text-accent font-medium">{exp.role}</p>
+    <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-16" data-animate data-delay="100">
+      Where I've been<span class="gradient-text">.</span>
+    </h2>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Vertical line -->
+      <div class="absolute left-[5px] md:left-[5px] top-0 bottom-0 w-px bg-gradient-to-b from-accent via-border to-transparent"></div>
+
+      <div class="space-y-12">
+        {experiences.map((exp, i) => (
+          <div class="relative pl-10 md:pl-12" data-animate data-delay={String(i * 150)}>
+            <!-- Timeline dot -->
+            <div class="absolute left-0 top-2">
+              <div class="timeline-dot"></div>
             </div>
-            <span class="text-text-muted text-sm shrink-0">{exp.period}</span>
+
+            <!-- Card -->
+            <div class="bg-bg-card border border-border rounded-xl p-6 md:p-8 card-hover timeline-card">
+              <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+                <div class="flex items-start gap-3">
+                  <div class="w-10 h-10 rounded-lg bg-accent-subtle flex items-center justify-center shrink-0 mt-0.5">
+                    <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={exp.icon} />
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-text-primary">{exp.company}</h3>
+                    <p class="text-accent font-medium text-sm">{exp.role}</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3 md:flex-col md:items-end">
+                  <span class="text-text-muted text-sm font-mono shrink-0">{exp.period}</span>
+                  <span class="text-xs px-2.5 py-1 rounded-full bg-accent-subtle text-accent border border-accent/20">
+                    {exp.badge}
+                  </span>
+                </div>
+              </div>
+
+              <p class="text-text-secondary leading-relaxed mb-5">{exp.description}</p>
+
+              <ul class="space-y-2 mb-5">
+                {exp.highlights.map((h) => (
+                  <li class="flex items-start gap-3 text-text-secondary text-sm">
+                    <span class="text-accent mt-0.5 shrink-0">▹</span>
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="flex flex-wrap gap-2">
+                {exp.tags.map((tag) => (
+                  <span class="text-xs px-2.5 py-1 rounded-md bg-bg-elevated text-text-muted border border-border font-mono">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-
-          <p class="text-text-secondary leading-relaxed mb-6">{exp.description}</p>
-
-          <ul class="space-y-2 mb-6">
-            {exp.highlights.map((h) => (
-              <li class="flex items-start gap-3 text-text-secondary text-sm">
-                <span class="text-accent mt-1.5 shrink-0">▹</span>
-                <span>{h}</span>
-              </li>
-            ))}
-          </ul>
-
-          <div class="flex flex-wrap gap-2">
-            {exp.tags.map((tag) => (
-              <span class="text-xs px-3 py-1 rounded-full bg-accent-subtle text-accent border border-accent/20">
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </div>
 </section>

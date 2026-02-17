@@ -2,45 +2,76 @@
 const skillGroups = [
   {
     title: "Product & Strategy",
+    icon: `<path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`,
     skills: ["Product Roadmapping", "Go-to-Market", "Market Research", "Customer Discovery", "Pricing Strategy", "Competitive Analysis", "Business Analysis"]
   },
   {
     title: "Technical",
-    skills: ["TypeScript / JavaScript", "React", "Node.js", "PostgreSQL", "Python", "REST APIs", "Git", "HTML/CSS"]
+    icon: `<path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`,
+    skills: ["TypeScript", "React", "Node.js", "PostgreSQL", "Python", "REST APIs", "Git", "HTML/CSS", "Docker"]
   },
   {
     title: "Tools & Platforms",
-    skills: ["Jira", "Figma", "Power BI", "Tableau", "SolidWorks", "Vercel", "Docker", "AI/LLM Tools"]
+    icon: `<path d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`,
+    skills: ["Jira", "Figma", "Power BI", "Tableau", "SolidWorks", "Vercel", "AI/LLM Tools", "Unigraphics"]
   },
   {
     title: "Leadership",
-    skills: ["Cross-functional Teams", "Agile / Scrum", "StageGate", "4DX", "Stakeholder Management", "Mentoring", "Servant Leadership"]
+    icon: `<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`,
+    skills: ["Cross-functional Teams", "Agile / Scrum", "StageGate", "4DX", "Stakeholder Mgmt", "Mentoring", "Servant Leadership"]
   }
 ];
 ---
 
-<section id="skills" class="py-24 px-6">
-  <div class="max-w-4xl mx-auto">
-    <div data-animate>
-      <p class="text-accent text-sm font-medium tracking-widest uppercase mb-3">Skills</p>
-      <h2 class="text-3xl md:text-4xl font-bold mb-12">
-        What I work with<span class="text-accent">.</span>
-      </h2>
+<section id="skills" class="py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <!-- Section label -->
+    <div class="section-label" data-animate>
+      <span class="section-number">04</span>
+      <span class="section-line"></span>
+      <span class="section-label-text">Skills</span>
     </div>
 
+    <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-12" data-animate data-delay="100">
+      What I work with<span class="gradient-text">.</span>
+    </h2>
+
     <div class="grid md:grid-cols-2 gap-6">
-      {skillGroups.map((group) => (
-        <div data-animate class="bg-bg-card border border-border rounded-xl p-6">
-          <h3 class="text-sm font-semibold text-accent uppercase tracking-wider mb-4">{group.title}</h3>
+      {skillGroups.map((group, i) => (
+        <div data-animate data-delay={String(i * 100 + 150)} class="bg-bg-card border border-border rounded-xl p-6 card-hover">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-9 h-9 rounded-lg bg-accent-subtle flex items-center justify-center">
+              <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={group.icon} />
+            </div>
+            <h3 class="text-sm font-semibold text-accent uppercase tracking-wider font-mono">{group.title}</h3>
+          </div>
           <div class="flex flex-wrap gap-2">
             {group.skills.map((skill) => (
-              <span class="text-sm px-3 py-1.5 rounded-lg bg-bg-elevated text-text-secondary border border-border hover:border-accent/30 hover:text-text-primary transition-colors">
+              <span class="text-sm px-3 py-1.5 rounded-lg bg-bg-elevated text-text-secondary border border-border hover:border-accent/40 hover:text-text-primary transition-all cursor-default">
                 {skill}
               </span>
             ))}
           </div>
         </div>
       ))}
+    </div>
+
+    <!-- Scrolling marquee of all skills -->
+    <div class="mt-12 overflow-hidden relative" data-animate data-delay="600">
+      <div class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-bg to-transparent z-10"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-bg to-transparent z-10"></div>
+      <div class="marquee-track">
+        {[...Array(2)].map(() => (
+          <div class="flex items-center gap-6 px-3">
+            {["Product Strategy", "TypeScript", "React", "Node.js", "PostgreSQL", "Python", "Figma", "Agile", "SolidWorks", "Go-to-Market", "Docker", "Power BI", "AI/ML", "Leadership"].map(s => (
+              <span class="text-text-muted text-sm whitespace-nowrap font-mono opacity-40">
+                {s}
+                <span class="text-accent ml-6">·</span>
+              </span>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>

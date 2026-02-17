@@ -2,50 +2,52 @@
 const projects = [
   {
     title: "Conduit CRM",
-    description: "A full-stack CRM with CPQ (Configure-Price-Quote) capabilities built for SMB hardware companies. Features include pipeline management, volume pricing engine, RBAC, PDF export, GDPR compliance, and webhook integrations.",
-    tags: ["TypeScript", "React", "Node.js", "PostgreSQL", "Tailwind CSS"],
-    link: null,
-    status: "In Development"
+    description: "Full-stack CRM with CPQ (Configure-Price-Quote) for SMB hardware companies. Pipeline management, volume pricing engine, RBAC, PDF export, GDPR compliance, and webhook integrations.",
+    tags: ["TypeScript", "React", "Node.js", "PostgreSQL"],
+    status: "Building",
+    icon: `<path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`
   },
   {
     title: "AI Agent Orchestration",
-    description: "Multi-agent system for task delegation and automation. Built queue-driven architecture with file locking, model routing for cost optimization, and fire-and-forget communication patterns.",
-    tags: ["AI/ML", "Node.js", "Multi-Agent Systems", "Automation"],
-    link: null,
-    status: "Active"
+    description: "Multi-agent system for task delegation and automation. Queue-driven architecture with file locking, intelligent model routing, and fire-and-forget communication patterns.",
+    tags: ["AI/ML", "Node.js", "Multi-Agent", "Automation"],
+    status: "Active",
+    icon: `<path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`
   },
   {
     title: "Autonomous Robotics Platform",
-    description: "Leading the product strategy and development of next-generation hardware systems for autonomous operation in industrial environments at Orbex Group.",
-    tags: ["Robotics", "Hardware", "Product Strategy", "Automation"],
-    link: null,
-    status: "At Orbex"
+    description: "Product strategy and development of next-gen hardware systems for autonomous operation in industrial environments. Defining the roadmap from concept through commercialization.",
+    tags: ["Robotics", "Hardware", "Strategy", "IoT"],
+    status: "@ Orbex",
+    icon: `<path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`
   }
 ];
 ---
 
-<section id="projects" class="py-24 px-6">
-  <div class="max-w-4xl mx-auto">
-    <div data-animate>
-      <p class="text-accent text-sm font-medium tracking-widest uppercase mb-3">Projects</p>
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">
-        Things I'm building<span class="text-accent">.</span>
-      </h2>
-      <p class="text-text-secondary text-lg mb-12 max-w-2xl">
-        I believe the best product leaders can also ship. Here's what I'm working on.
-      </p>
+<section id="projects" class="py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <!-- Section label -->
+    <div class="section-label" data-animate>
+      <span class="section-number">03</span>
+      <span class="section-line"></span>
+      <span class="section-label-text">Projects</span>
     </div>
 
+    <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4" data-animate data-delay="100">
+      Things I'm building<span class="gradient-text">.</span>
+    </h2>
+    <p class="text-text-secondary text-lg mb-12 max-w-2xl" data-animate data-delay="150">
+      The best product leaders can also ship. Here's what I'm working on.
+    </p>
+
     <div class="grid md:grid-cols-2 gap-6">
-      {projects.map((project) => (
-        <div data-animate class="group bg-bg-card border border-border rounded-xl p-8 hover:border-accent/30 transition-all flex flex-col">
-          <div class="flex items-center justify-between mb-4">
-            <div class="w-10 h-10 rounded-lg bg-accent-subtle flex items-center justify-center">
-              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
+      {projects.map((project, i) => (
+        <div data-animate data-delay={String(i * 100 + 200)} class="bg-bg-card border border-border rounded-xl p-7 card-hover flex flex-col">
+          <div class="flex items-center justify-between mb-5">
+            <div class="w-11 h-11 rounded-lg bg-accent-subtle flex items-center justify-center">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={project.icon} />
             </div>
-            <span class="text-xs px-2.5 py-1 rounded-full bg-accent-subtle text-accent border border-accent/20">
+            <span class="text-xs px-2.5 py-1 rounded-full bg-accent-subtle text-accent border border-accent/20 font-mono">
               {project.status}
             </span>
           </div>
@@ -53,23 +55,23 @@ const projects = [
           <h3 class="text-lg font-semibold text-text-primary mb-2">{project.title}</h3>
           <p class="text-text-secondary text-sm leading-relaxed mb-6 flex-grow">{project.description}</p>
 
-          <div class="flex flex-wrap gap-2">
+          <div class="flex flex-wrap gap-2 pt-4 border-t border-border">
             {project.tags.map((tag) => (
-              <span class="text-xs text-text-muted">{tag}</span>
+              <span class="text-xs text-text-muted font-mono">{tag}</span>
             ))}
           </div>
         </div>
       ))}
 
-      <!-- Tinkerer card -->
-      <div data-animate class="bg-bg-card border border-dashed border-border rounded-xl p-8 flex flex-col items-center justify-center text-center hover:border-accent/30 transition-colors">
-        <div class="w-10 h-10 rounded-lg bg-accent-subtle flex items-center justify-center mb-4">
+      <!-- Always building card -->
+      <div data-animate data-delay="500" class="bg-bg-card border border-dashed border-border rounded-xl p-7 flex flex-col items-center justify-center text-center card-hover min-h-[220px]">
+        <div class="w-11 h-11 rounded-lg bg-accent-subtle flex items-center justify-center mb-4 animate-float">
           <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
           </svg>
         </div>
-        <p class="text-text-secondary text-sm">Always building something new.</p>
-        <p class="text-text-muted text-xs mt-1">More projects coming soon.</p>
+        <p class="text-text-secondary text-sm font-medium">Always tinkering.</p>
+        <p class="text-text-muted text-xs mt-1">More projects in the workshop.</p>
       </div>
     </div>
   </div>

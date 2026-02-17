@@ -1,48 +1,118 @@
 ---
 ---
 
-<section class="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
-  <!-- Subtle gradient orb -->
-  <div class="absolute top-1/4 -right-32 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
-  <div class="absolute bottom-1/4 -left-32 w-80 h-80 bg-accent/3 rounded-full blur-3xl pointer-events-none"></div>
+<section class="min-h-screen flex items-center justify-center px-6 relative overflow-hidden grid-bg">
+  <!-- Gradient orbs -->
+  <div class="absolute top-1/4 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/3 rounded-full blur-[100px] pointer-events-none"></div>
 
-  <div class="max-w-3xl text-center">
-    <div class="animate-fade-up">
-      <p class="text-accent text-sm font-medium tracking-widest uppercase mb-4">
-        Product Leader · Engineer · Builder
-      </p>
+  <div class="max-w-4xl w-full">
+    <!-- Available tag -->
+    <div class="animate-fade-up flex items-center gap-2 mb-8">
+      <span class="relative flex h-2.5 w-2.5">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400"></span>
+      </span>
+      <span class="text-text-secondary text-sm font-mono">Open to opportunities</span>
     </div>
 
-    <h1 class="animate-fade-up delay-100 text-5xl md:text-7xl font-bold tracking-tight leading-tight">
-      Bibek Ghimire
+    <!-- Name -->
+    <h1 class="animate-fade-up delay-100">
+      <span class="block text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">Bibek</span>
+      <span class="block text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mt-1">
+        Ghimire<span class="gradient-text">.</span>
+      </span>
     </h1>
 
-    <p class="animate-fade-up delay-200 mt-6 text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-      Senior Product Manager at <span class="text-text-primary font-medium">Orbex Group</span>, 
-      driving the next generation of autonomous robotics systems. 
-      I bring ideas, people, and teams together to build products customers love.
-    </p>
+    <!-- Typing effect -->
+    <div class="animate-fade-up delay-200 mt-6 font-mono text-lg md:text-xl text-text-secondary">
+      <span class="text-accent mr-2">$</span>
+      <span id="typed-text"></span>
+      <span class="typed-cursor"></span>
+    </div>
 
-    <div class="animate-fade-up delay-300 mt-10 flex flex-wrap items-center justify-center gap-4">
+    <!-- Meta row -->
+    <div class="animate-fade-up delay-300 mt-10 flex flex-wrap items-center gap-6 md:gap-10">
+      <div>
+        <p class="text-text-muted text-xs uppercase tracking-wider font-mono">Role</p>
+        <p class="text-text-primary font-medium mt-1">Senior Product Manager</p>
+      </div>
+      <div class="hidden md:block w-px h-10 bg-border"></div>
+      <div>
+        <p class="text-text-muted text-xs uppercase tracking-wider font-mono">Company</p>
+        <p class="text-text-primary font-medium mt-1">Orbex Group</p>
+      </div>
+      <div class="hidden md:block w-px h-10 bg-border"></div>
+      <div>
+        <p class="text-text-muted text-xs uppercase tracking-wider font-mono">Focus</p>
+        <p class="text-text-primary font-medium mt-1">Autonomous Robotics</p>
+      </div>
+    </div>
+
+    <!-- CTAs -->
+    <div class="animate-fade-up delay-400 mt-10 flex flex-wrap items-center gap-4">
       <a
         href="#experience"
-        class="px-6 py-3 bg-accent text-bg font-medium rounded-lg hover:bg-accent-hover transition-colors"
+        class="group inline-flex items-center gap-2 px-6 py-3 bg-accent text-bg font-medium rounded-lg hover:bg-accent-hover transition-all"
+        data-hover
       >
-        View My Work
+        <span>View My Work</span>
+        <span class="group-hover:translate-x-1 transition-transform">→</span>
       </a>
       <a
         href="#contact"
-        class="px-6 py-3 border border-border text-text-secondary rounded-lg hover:border-accent hover:text-accent transition-colors"
+        class="inline-flex items-center gap-2 px-6 py-3 border border-border text-text-secondary rounded-lg hover:border-accent hover:text-accent transition-all"
+        data-hover
       >
         Get in Touch
       </a>
     </div>
 
     <!-- Scroll indicator -->
-    <div class="animate-fade-up delay-500 mt-20">
-      <div class="w-5 h-8 border-2 border-text-muted rounded-full mx-auto flex justify-center">
-        <div class="w-1 h-2 bg-text-muted rounded-full mt-1.5 animate-bounce"></div>
-      </div>
+    <div class="animate-fade-up delay-700 absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+      <span class="text-text-muted text-xs font-mono tracking-wider">Scroll</span>
+      <div class="w-px h-10 bg-gradient-to-b from-accent/50 to-transparent animate-pulse"></div>
     </div>
   </div>
 </section>
+
+<script>
+  // Typing effect
+  const phrases = [
+    "Product Leader × Engineer × Builder",
+    "Turning ideas into products people love",
+    "Hardware meets software meets strategy"
+  ];
+  
+  const el = document.getElementById('typed-text')!;
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  
+  function type() {
+    const current = phrases[phraseIndex];
+    
+    if (isDeleting) {
+      el.textContent = current.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      el.textContent = current.substring(0, charIndex + 1);
+      charIndex++;
+    }
+    
+    let speed = isDeleting ? 30 : 60;
+    
+    if (!isDeleting && charIndex === current.length) {
+      speed = 2500;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      speed = 400;
+    }
+    
+    setTimeout(type, speed);
+  }
+  
+  setTimeout(type, 1000);
+</script>
