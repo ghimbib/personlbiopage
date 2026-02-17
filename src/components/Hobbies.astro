@@ -1,0 +1,45 @@
+---
+const hobbies = [
+  { name: "Running", emoji: "🏃", desc: "Trails & road" },
+  { name: "Cycling", emoji: "🚴", desc: "Road & gravel" },
+  { name: "Snowboarding", emoji: "🏂", desc: "CO powder days" },
+  { name: "Hiking", emoji: "🥾", desc: "14ers & beyond" },
+  { name: "Woodworking", emoji: "🪵", desc: "Build & create" },
+  { name: "Aviation", emoji: "✈️", desc: "Lifelong fascination" },
+  { name: "Space", emoji: "🚀", desc: "Exploration & sci" },
+  { name: "Tech & Biology", emoji: "🧬", desc: "How things work" },
+];
+---
+
+<section id="hobbies" class="py-20 sm:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <!-- Section label -->
+    <div class="section-label" data-animate>
+      <span class="section-number">05</span>
+      <span class="section-line"></span>
+      <span class="section-label-text">Beyond Work</span>
+    </div>
+
+    <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4" data-animate data-delay="100">
+      When I'm not building<span class="gradient-text">.</span>
+    </h2>
+    <p class="text-text-secondary text-lg mb-10 max-w-2xl" data-animate data-delay="150">
+      Passionate about continuous learning, staying active, and exploring how things work — 
+      from biology to the cosmos.
+    </p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4" data-animate data-delay="200">
+      {hobbies.map((hobby, i) => (
+        <div 
+          class="group bg-bg-card border border-border rounded-xl p-4 sm:p-5 text-center card-hover"
+          data-animate 
+          data-delay={String(i * 60 + 250)}
+        >
+          <span class="text-2xl sm:text-3xl block mb-2 group-hover:scale-110 transition-transform">{hobby.emoji}</span>
+          <p class="text-text-primary text-sm font-medium">{hobby.name}</p>
+          <p class="text-text-muted text-xs mt-0.5">{hobby.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
