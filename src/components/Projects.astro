@@ -1,0 +1,76 @@
+---
+const projects = [
+  {
+    title: "Conduit CRM",
+    description: "A full-stack CRM with CPQ (Configure-Price-Quote) capabilities built for SMB hardware companies. Features include pipeline management, volume pricing engine, RBAC, PDF export, GDPR compliance, and webhook integrations.",
+    tags: ["TypeScript", "React", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    link: null,
+    status: "In Development"
+  },
+  {
+    title: "AI Agent Orchestration",
+    description: "Multi-agent system for task delegation and automation. Built queue-driven architecture with file locking, model routing for cost optimization, and fire-and-forget communication patterns.",
+    tags: ["AI/ML", "Node.js", "Multi-Agent Systems", "Automation"],
+    link: null,
+    status: "Active"
+  },
+  {
+    title: "Autonomous Robotics Platform",
+    description: "Leading the product strategy and development of next-generation hardware systems for autonomous operation in industrial environments at Orbex Group.",
+    tags: ["Robotics", "Hardware", "Product Strategy", "Automation"],
+    link: null,
+    status: "At Orbex"
+  }
+];
+---
+
+<section id="projects" class="py-24 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div data-animate>
+      <p class="text-accent text-sm font-medium tracking-widest uppercase mb-3">Projects</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Things I'm building<span class="text-accent">.</span>
+      </h2>
+      <p class="text-text-secondary text-lg mb-12 max-w-2xl">
+        I believe the best product leaders can also ship. Here's what I'm working on.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {projects.map((project) => (
+        <div data-animate class="group bg-bg-card border border-border rounded-xl p-8 hover:border-accent/30 transition-all flex flex-col">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-10 h-10 rounded-lg bg-accent-subtle flex items-center justify-center">
+              <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-accent-subtle text-accent border border-accent/20">
+              {project.status}
+            </span>
+          </div>
+
+          <h3 class="text-lg font-semibold text-text-primary mb-2">{project.title}</h3>
+          <p class="text-text-secondary text-sm leading-relaxed mb-6 flex-grow">{project.description}</p>
+
+          <div class="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span class="text-xs text-text-muted">{tag}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <!-- Tinkerer card -->
+      <div data-animate class="bg-bg-card border border-dashed border-border rounded-xl p-8 flex flex-col items-center justify-center text-center hover:border-accent/30 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-accent-subtle flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+          </svg>
+        </div>
+        <p class="text-text-secondary text-sm">Always building something new.</p>
+        <p class="text-text-muted text-xs mt-1">More projects coming soon.</p>
+      </div>
+    </div>
+  </div>
+</section>

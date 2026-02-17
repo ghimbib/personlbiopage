@@ -1,0 +1,74 @@
+---
+const experiences = [
+  {
+    company: "Orbex Group",
+    role: "Senior Product Manager",
+    period: "2024 – Present",
+    description: "Leading product strategy for next-generation autonomous robotics and hardware systems. Wearing multiple hats — product, marketing, business analysis — to help the company scale.",
+    highlights: [
+      "Defining roadmap for autonomous hardware systems entering the robotics market",
+      "Implementing systems (CRM, analytics) and processes to support company growth",
+      "Go-to-market strategy and product positioning for B2B automation",
+      "Cross-functional leadership across engineering, sales, and operations"
+    ],
+    tags: ["Autonomous Systems", "Product Strategy", "B2B", "Go-to-Market"]
+  },
+  {
+    company: "Baker Hughes",
+    role: "Product Manager → RDD Engineer",
+    period: "2012 – 2023",
+    description: "Progressed from Research, Design & Development engineer to product management over 11 years in the energy technology space. Designed drilling products used worldwide.",
+    highlights: [
+      "Managed portfolio of drilling products from concept through global commercialization",
+      "Designed hybrid drill bits with focus on customer pain points over ease of manufacture",
+      "Led cross-functional teams through Waterfall, StageGate, and Agile methodologies",
+      "Data-driven product decisions using analytics and customer feedback loops"
+    ],
+    tags: ["Product Management", "Engineering Design", "Oil & Gas", "Global Operations"]
+  }
+];
+---
+
+<section id="experience" class="py-24 px-6">
+  <div class="max-w-4xl mx-auto">
+    <div data-animate>
+      <p class="text-accent text-sm font-medium tracking-widest uppercase mb-3">Experience</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-12">
+        Where I've been<span class="text-accent">.</span>
+      </h2>
+    </div>
+
+    <div class="space-y-8">
+      {experiences.map((exp) => (
+        <div data-animate class="group bg-bg-card border border-border rounded-xl p-8 hover:border-accent/30 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+            <div>
+              <h3 class="text-xl font-semibold text-text-primary">{exp.company}</h3>
+              <p class="text-accent font-medium">{exp.role}</p>
+            </div>
+            <span class="text-text-muted text-sm shrink-0">{exp.period}</span>
+          </div>
+
+          <p class="text-text-secondary leading-relaxed mb-6">{exp.description}</p>
+
+          <ul class="space-y-2 mb-6">
+            {exp.highlights.map((h) => (
+              <li class="flex items-start gap-3 text-text-secondary text-sm">
+                <span class="text-accent mt-1.5 shrink-0">▹</span>
+                <span>{h}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="flex flex-wrap gap-2">
+            {exp.tags.map((tag) => (
+              <span class="text-xs px-3 py-1 rounded-full bg-accent-subtle text-accent border border-accent/20">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
