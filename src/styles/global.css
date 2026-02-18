@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0a0a0f;
-  --color-bg-card: #111118;
-  --color-bg-elevated: #1a1a25;
-  --color-border: #222233;
-  --color-border-hover: #333355;
-  --color-text-primary: #e8e8ed;
-  --color-text-secondary: #8888a0;
-  --color-text-muted: #55556a;
-  --color-accent: #f59e0b;
-  --color-accent-hover: #fbbf24;
-  --color-accent-dim: #b47708;
-  --color-accent-subtle: rgba(245, 158, 11, 0.08);
-  --color-accent-glow: rgba(245, 158, 11, 0.15);
+  --color-bg: #0A2540;
+  --color-bg-card: #0f3058;
+  --color-bg-elevated: #153d6e;
+  --color-border: #1a4a7a;
+  --color-border-hover: #2a6aaa;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #94b8d8;
+  --color-text-muted: #5a8ab5;
+  --color-accent: #00C4B4;
+  --color-accent-hover: #00e0ce;
+  --color-accent-dim: #00a89a;
+  --color-accent-subtle: rgba(0, 196, 180, 0.08);
+  --color-accent-glow: rgba(0, 196, 180, 0.15);
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 }
@@ -270,7 +270,7 @@ body {
 .card-hover:hover {
   transform: translateY(-4px);
   border-color: var(--color-accent) !important;
-  box-shadow: 0 8px 30px rgba(245, 158, 11, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 196, 180, 0.08);
 }
 
 /* ── Marquee ── */
@@ -286,7 +286,7 @@ body {
 
 /* ── Gradient text ── */
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover), #fcd34d);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover), #66f5e8);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
