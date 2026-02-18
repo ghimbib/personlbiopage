@@ -180,8 +180,15 @@ body {
 .section-label {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
   margin-bottom: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .section-label {
+    justify-content: flex-start;
+  }
 }
 
 .section-number {
