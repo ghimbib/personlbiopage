@@ -4,12 +4,15 @@ import '../styles/global.css'
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
 }
 
 const { 
   title = "Bibek Ghimire — Product Leader & Builder",
-  description = "Senior Product Manager at Orbex Group. Building the next generation of autonomous robotics systems. Product strategy, engineering, and tinkering."
+  description = "Senior Product Manager at Orbex Group. Building the next generation of autonomous robotics systems. Product strategy, engineering, and tinkering.",
+  image
 } = Astro.props;
+const siteUrl = "https://bibekghimire.com";
 ---
 
 <!DOCTYPE html>
@@ -21,6 +24,9 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    {image && <meta property="og:image" content={`${siteUrl}${image}`} />}
+    {image && <meta name="twitter:card" content="summary_large_image" />}
+    {image && <meta name="twitter:image" content={`${siteUrl}${image}`} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
