@@ -1,21 +1,51 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@layer base {
+  :root {
+    --bg-primary:    #F7F8F6;
+    --bg-surface:    #EDEEF0;
+    --text-primary:  #111827;
+    --text-secondary:#4B5563;
+    --accent:        #0E9E92;
+    --accent-hover:  #0A8278;
+    --border:        #D1D5DB;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    --text-hero:    clamp(2.5rem, 5vw + 1rem, 4.5rem);
+    --text-h2:      clamp(1.5rem, 3vw + 0.5rem, 2.25rem);
+    --text-h3:      clamp(1.125rem, 1.5vw, 1.5rem);
+    --text-body:    1rem;
+    --line-height-body: 1.7;
+  }
+  [data-theme="dark"] {
+    --bg-primary:    #0D1B2A;
+    --bg-surface:    #132035;
+    --text-primary:  #E8EDF2;
+    --text-secondary:#8A9BB0;
+    --accent:        #1AB5A8;
+    --accent-hover:  #5BBCB0;
+    --border:        #1E3048;
+  }
+}
+
 @theme {
-  --color-bg: #0A2540;
-  --color-bg-card: #0f3058;
-  --color-bg-elevated: #153d6e;
-  --color-border: #1a4a7a;
-  --color-border-hover: #2a6aaa;
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #94b8d8;
-  --color-text-muted: #5a8ab5;
-  --color-accent: #00C4B4;
-  --color-accent-hover: #00e0ce;
-  --color-accent-dim: #00a89a;
-  --color-accent-subtle: rgba(0, 196, 180, 0.08);
-  --color-accent-glow: rgba(0, 196, 180, 0.15);
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --color-bg: var(--bg-primary);
+  --color-bg-card: var(--bg-surface);
+  --color-bg-elevated: var(--bg-surface);
+  --color-border: var(--border);
+  --color-border-hover: var(--accent);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-secondary);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-dim: var(--accent);
+  --color-accent-subtle: color-mix(in srgb, var(--accent) 8%, transparent);
+  --color-accent-glow: color-mix(in srgb, var(--accent) 15%, transparent);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
 html {
