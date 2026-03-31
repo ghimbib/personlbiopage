@@ -4,6 +4,7 @@ description: "When 'doesn't fit our model' becomes 'fine, I'll build my own mode
 date: 2026-03-21
 image: /images/blog/openclaw-reaction/hero-banner.png
 tags: ["AI", "AgenticAI", "BuildInPublic", "SaaS", "Productivity"]
+draft: false
 ---
 
 A friend of mine emailed a scheduling app called FlowSavvy a few months ago. He'd been using it daily, had specific ideas about how it could work better for him, and took the time to write thoughtful feedback. Not a complaint. A real suggestion, the kind product teams say they want.

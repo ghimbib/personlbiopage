@@ -4,6 +4,7 @@ description: "The real unlock isn't a better AI tool. It's building a system whe
 date: 2026-03-18
 image: /images/blog/agentic-orchestration-banner.png
 tags: ["AI", "AgenticAI", "ProductManagement", "BuildInPublic"]
+draft: false
 ---
 
 ## What happened before I opened my laptop

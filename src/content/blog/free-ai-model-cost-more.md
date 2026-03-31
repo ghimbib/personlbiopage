@@ -4,6 +4,7 @@ description: "Why price-per-token is the wrong metric. Cost isn't what you pay i
 date: 2026-03-20
 image: /images/blog/zero-cost-fleet/hero-banner.png
 tags: ["AI", "AgenticAI", "BuildInPublic", "OpenSource"]
+draft: false
 ---
 
 
