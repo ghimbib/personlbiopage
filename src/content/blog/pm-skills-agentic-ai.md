@@ -4,6 +4,7 @@ description: "The skills that make agentic AI work aren't new. They're PM fundam
 date: 2026-03-28
 image: /images/blog/pm-skills-agentic-ai/hero-banner.png
 tags: ["AI", "AgenticAI", "ProductManagement", "BuildInPublic"]
+draft: false
 ---
 
 ## The mistake I'd already made before
