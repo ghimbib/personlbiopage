@@ -1,44 +1,75 @@
-# Astro Starter Kit: Minimal
+# bibekghimire.com
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Personal website and blog for Bibek Ghimire, built with Astro and Tailwind CSS.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## What this repo is
 
-## 🚀 Project Structure
+This repo powers Bibek's personal site, including:
+- homepage and professional profile
+- experience, projects, and skills sections
+- blog content under `src/content/blog`
+- staging and production site updates for design/content changes
 
-Inside of your Astro project, you'll see the following folders and files:
+## Stack
+
+- Astro 5
+- Tailwind CSS 4
+- Markdown content collections for blog posts
+
+## Project structure
 
 ```text
 /
 ├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/
+│   ├── content/
+│   │   └── blog/
+│   ├── layouts/
+│   ├── pages/
+│   └── styles/
+├── package.json
+└── README.md
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Local development
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+From the repo root:
 
-Any static assets, like images, can be placed in the `public/` directory.
+```sh
+npm install
+npm run dev
+```
 
-## 🧞 Commands
+Local dev server:
+- `http://localhost:4321`
 
-All commands are run from the root of the project, from a terminal:
+## Build and preview
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```sh
+npm run build
+npm run preview
+```
 
-## 👀 Want to learn more?
+## Key files
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- `src/pages/index.astro` — homepage assembly
+- `src/components/Nav.astro` — top navigation and theme toggle
+- `src/components/Hero.astro` — hero section and primary CTAs
+- `src/layouts/Layout.astro` — global page shell and theme boot logic
+- `src/content/blog/` — blog posts
 
+## Current expectations
+
+When updating this site:
+- do not leave default Astro starter content in docs or UI
+- keep CTAs functional, especially contact and resume-request flows
+- keep theme controls visually clean and production-ready
+- verify staging reflects the intended branch before calling work done
+
+## Notes
+
+If staging behavior does not match source, verify:
+- current checked-out branch
+- latest deployed commit
+- whether staging is serving stale build output or the wrong branch
