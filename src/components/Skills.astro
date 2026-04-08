@@ -3,12 +3,12 @@ const skillGroups = [
   {
     title: "Product & Strategy",
     icon: `<path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`,
-    skills: ["Product Strategy", "Roadmapping", "Customer Discovery", "Voice of Customer", "Go-to-Market", "Pricing Strategy", "Requirements Definition", "Competitive Analysis"]
+    skills: ["Product Strategy", "Roadmapping", "Customer Discovery", "Voice of Customer", "Go-to-Market", "Pricing Strategy", "Requirements", "Competitive Analysis"]
   },
   {
     title: "Technical Fluency",
     icon: `<path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`,
-    skills: ["TypeScript", "React", "Node.js", "PostgreSQL", "Python", "REST APIs", "Workflow Automation", "AI/LLM Systems", "Git"]
+    skills: ["TypeScript", "React", "Node.js", "PostgreSQL", "Python", "APIs", "Workflow Automation", "AI Systems", "Git"]
   },
   {
     title: "Analytics & Tools",
@@ -18,7 +18,7 @@ const skillGroups = [
   {
     title: "Leadership & Execution",
     icon: `<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>`,
-    skills: ["Cross-functional Leadership", "Stakeholder Management", "Product Execution", "Experimentation", "Business Case Development", "Mentoring", "Agile / Scrum", "Product Marketing"]
+    skills: ["Cross-functional Leadership", "Stakeholder Management", "Execution", "Experimentation", "Business Cases", "Mentoring", "Agile / Scrum", "Product Marketing"]
   }
 ];
 ---
@@ -63,7 +63,7 @@ const skillGroups = [
       <div class="marquee-track">
         {[...Array(2)].map(() => (
           <div class="flex items-center gap-6 px-3">
-            {["Product Strategy", "Roadmapping", "React", "Node.js", "Workflow Automation", "Customer Discovery", "Figma", "Agile", "Power BI", "Go-to-Market", "SQL", "Vercel", "AI/LLM", "Leadership"].map(s => (
+            {["Product Strategy", "Roadmapping", "React", "Node.js", "Workflow Automation", "Customer Discovery", "Figma", "Agile", "Power BI", "Go-to-Market", "SQL", "Vercel", "AI Systems", "Leadership"].map(s => (
               <span class="text-text-muted text-sm whitespace-nowrap font-mono opacity-40">
                 {s}
                 <span class="text-accent ml-6">·</span>
