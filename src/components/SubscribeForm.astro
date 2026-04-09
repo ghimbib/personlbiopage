@@ -10,17 +10,21 @@ const {
 } = Astro.props;
 
 const formId = compact ? 'compact' : 'full';
-const action = 'https://buttondown.com/api/emails/embed-subscribe/bibekgh';
+const eyebrow = 'Newsletter';
+const title = 'Get new essays in your inbox';
+const helper = 'No spam. Just new posts and occasional useful notes.';
 ---
 
-<section class={`subscribe-card ${compact ? 'subscribe-card--compact' : ''} ${className}`.trim()}>
-  <div class="subscribe-card__copy">
-    <p class="subscribe-card__eyebrow">Newsletter</p>
-    <h2 class="subscribe-card__title">Get new essays in your inbox</h2>
-    <p class="subscribe-card__helper">No spam. Just new posts and occasional useful notes.</p>
-  </div>
+<section class={`subscribe-card ${compact ? 'subscribe-card--compact' : ''} ${className}`.trim()} data-subscribe-root>
+  {!compact && (
+    <div class="subscribe-card__copy">
+      <p class="subscribe-card__eyebrow">{eyebrow}</p>
+      <h2 class="subscribe-card__title">{title}</h2>
+      <p class="subscribe-card__helper">{helper}</p>
+    </div>
+  )}
 
-  <form class="subscribe-form" action={action} method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/bibekgh', 'popupwindow')">
+  <form class="subscribe-form" data-subscribe-form novalidate>
     <label class="sr-only" for={`subscribe-email-${formId}`}>Email address</label>
     <div class="subscribe-form__row">
       <input
@@ -32,16 +36,88 @@ const action = 'https://buttondown.com/api/emails/embed-subscribe/bibekgh';
         placeholder="you@example.com"
         required
         class="subscribe-form__input"
+        aria-describedby={`subscribe-status-${formId}`}
       />
       <button type="submit" class="subscribe-form__button" data-hover>
         Subscribe
       </button>
     </div>
-    <p class="subscribe-form__status">
-      You’ll confirm on Buttondown in a small window.
-    </p>
+    <p
+      id={`subscribe-status-${formId}`}
+      class="subscribe-form__status"
+      data-subscribe-status
+      role="status"
+      aria-live="polite"
+    ></p>
   </form>
 </section>
+
+<script>
+  const roots = Array.from(document.querySelectorAll('[data-subscribe-root]'));
+
+  const messages = {
+    success: "You're in. Check your inbox to confirm.",
+    invalid_email: 'Enter a valid email address.',
+    already_subscribed: "You're already subscribed. Check your inbox if you need the confirmation email again.",
+    unavailable: 'Subscriptions are not available right now. Please try again soon.',
+    error: 'Something went wrong. Please try again in a moment.',
+  };
+
+  for (const root of roots) {
+    const form = root.querySelector('[data-subscribe-form]');
+    const status = root.querySelector('[data-subscribe-status]');
+    const input = root.querySelector('input[name="email"]');
+    const button = root.querySelector('button[type="submit"]');
+
+    if (!(form instanceof HTMLFormElement) || !(status instanceof HTMLElement) || !(input instanceof HTMLInputElement) || !(button instanceof HTMLButtonElement)) continue;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const email = input.value.trim();
+      status.textContent = '';
+      status.dataset.state = '';
+
+      if (!email || !input.checkValidity()) {
+        status.textContent = messages.invalid_email;
+        status.dataset.state = 'error';
+        input.focus();
+        return;
+      }
+
+      button.disabled = true;
+      const originalLabel = button.textContent;
+      button.textContent = 'Submitting...';
+
+      try {
+        const response = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email }),
+        });
+
+        const result = await response.json().catch(() => ({ status: 'error' }));
+        const state = typeof result?.status === 'string' ? result.status : 'error';
+        const message = messages[state] ?? messages.error;
+
+        status.textContent = message;
+        status.dataset.state = state === 'success' || state === 'already_subscribed' ? 'success' : 'error';
+
+        if (state === 'success' || state === 'already_subscribed') {
+          form.reset();
+        }
+      } catch {
+        status.textContent = messages.error;
+        status.dataset.state = 'error';
+      } finally {
+        button.disabled = false;
+        button.textContent = originalLabel;
+      }
+    });
+  }
+</script>
 
 <style>
   .subscribe-card {
@@ -55,6 +131,17 @@ const action = 'https://buttondown.com/api/emails/embed-subscribe/bibekgh';
 
   .subscribe-card--compact {
     padding: 1.25rem;
+    gap: 1rem;
+    border-radius: 1.25rem;
+    background: color-mix(in srgb, var(--color-bg-card) 92%, transparent);
+  }
+
+  .footer-subscribe.subscribe-card--compact {
+    padding: 0;
+    gap: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
   }
 
   .subscribe-card__eyebrow {
@@ -66,6 +153,10 @@ const action = 'https://buttondown.com/api/emails/embed-subscribe/bibekgh';
     color: var(--color-accent);
   }
 
+  .subscribe-card--compact .subscribe-card__eyebrow {
+    margin-bottom: 0.35rem;
+  }
+
   .subscribe-card__title {
     margin: 0;
     font-size: clamp(1.25rem, 2.4vw, 1.75rem);
@@ -74,10 +165,20 @@ const action = 'https://buttondown.com/api/emails/embed-subscribe/bibekgh';
     font-weight: 700;
   }
 
+  .subscribe-card--compact .subscribe-card__title {
+    font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+    line-height: 1.25;
+  }
+
   .subscribe-card__helper {
     margin: 0.75rem 0 0;
     color: var(--color-text-secondary);
     line-height: 1.6;
+  }
+
+  .subscribe-card--compact .subscribe-card__helper {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
   }
 
   .subscribe-form {
