@@ -38,12 +38,20 @@ const { Content } = await render(post);
       <!-- Hero image -->
       {post.data.image && (
         <div class="aspect-[5/2] rounded-xl overflow-hidden mb-8" data-animate>
-          <img 
-            src={post.data.image} 
-            alt={post.data.title}
-            class="w-full h-full object-cover"
-            style={post.data.imagePosition ? `object-position: ${post.data.imagePosition};` : undefined}
-          />
+          {post.id.replace(/\.md$/, '') === 'two-brothers-one-van' ? (
+            <img 
+              src={post.data.image} 
+              alt={post.data.title}
+              class="w-full h-full object-cover"
+              style="object-position: center 8%;"
+            />
+          ) : (
+            <img 
+              src={post.data.image} 
+              alt={post.data.title}
+              class="w-full h-full object-cover"
+            />
+          )}
         </div>
       )}
 
