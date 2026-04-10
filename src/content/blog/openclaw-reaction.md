@@ -1,6 +1,7 @@
 ---
 title: "I Emailed a SaaS Company With Feedback. They Said No. So I Built It Myself."
 description: "When 'doesn't fit our model' becomes 'fine, I'll build my own model.' A real story about agency, AI agents, and never asking for permission again."
+category: "AI Systems"
 date: 2026-03-21
 image: /images/blog/openclaw-reaction/hero-banner.png
 tags: ["AI", "AgenticAI", "BuildInPublic", "SaaS", "Productivity"]

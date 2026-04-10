@@ -1,9 +1,10 @@
 ---
 title: "Two Brothers, One Van, 48 Hours of Pain Ahead"
 description: "Aseem and Shyam start an amplified 4x4x48 challenge on the Manitou Incline, where the ordinary calm before the start is the most revealing part of the story."
+category: "Personal Stories"
 date: 2026-04-10T12:00:00Z
 image: /images/blog/two-brothers-one-van/start.jpg
-imagePosition: "center 22%"
+imagePosition: "center 35%"
 tags: ["Endurance", "Challenge", "Story"]
 draft: false
 hidden: false

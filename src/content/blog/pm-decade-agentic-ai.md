@@ -1,6 +1,7 @@
 ---
 title: "I've Been a PM for 10 Years. Building an AI Fleet Used Skills I Didn't Know I Had."
 description: "The skills that make agentic AI work aren't new. They're PM fundamentals: writing specs, sequencing sprints, defining done, running retros. Here's what a decade of product management taught me about running a 9-agent AI fleet."
+category: "Product Lessons"
 date: 2026-03-28
 image: /images/blog/pm-decade-agentic-ai/hero-banner.png
 tags: ["AI", "AgenticAI", "ProductManagement", "BuildInPublic"]

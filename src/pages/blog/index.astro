@@ -8,13 +8,34 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('blog'))
   .filter(post => !post.data.draft && !post.data.hidden)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const categoryOrder = ['AI Systems', 'Product Lessons', 'Personal Stories'];
+const categoryMeta = {
+  'AI Systems': {
+    description: 'Agent orchestration, AI systems, reliability, and build-in-public lessons from running real workflows.',
+  },
+  'Product Lessons': {
+    description: 'Product thinking, strategy, and operator lessons that transfer beyond any one tool or team.',
+  },
+  'Personal Stories': {
+    description: 'More human stories, lived moments, and real-world challenges that do not fit the usual tech essay mold.',
+  },
+};
+
+const groupedPosts = categoryOrder
+  .map((category) => ({
+    category,
+    id: category.toLowerCase().replace(/\s+/g, '-'),
+    description: categoryMeta[category].description,
+    posts: posts.filter((post) => post.data.category === category),
+  }))
+  .filter((group) => group.posts.length > 0);
 ---
 
 <Layout title="Blog — Bibek Ghimire" description="Thoughts on AI, product management, and building in public.">
   <Nav />
   <main class="pt-32 pb-20 px-6">
     <div class="max-w-4xl mx-auto">
-      <!-- Header -->
       <div class="mb-16" data-animate>
         <div class="flex items-center gap-4 mb-4">
           <span class="text-accent font-mono text-sm font-bold">blog</span>
@@ -24,60 +45,84 @@ const posts = (await getCollection('blog'))
           Lessons from building<span class="gradient-text">.</span>
         </h1>
         <p class="text-text-secondary text-lg max-w-2xl">
-          What I'm learning about AI agents, product management, and shipping software. 
-          Each article is a lesson I paid for so you don't have to.
+          What I'm learning about AI agents, product management, shipping software, and the occasional story that matters enough to write down.
         </p>
+        <div class="flex flex-wrap gap-3 mt-8">
+          {groupedPosts.map((group) => (
+            <a
+              href={`#${group.id}`}
+              class="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-border bg-bg-card text-sm text-text-secondary hover:text-accent hover:border-accent/30 transition-colors"
+            >
+              <span>{group.category}</span>
+              <span class="text-text-muted">{group.posts.length}</span>
+            </a>
+          ))}
+        </div>
       </div>
 
-      <!-- Posts -->
-      <div class="space-y-8">
-        {posts.map((post, i) => (
-          <a 
-            href={`/blog/${post.id.replace(/\.md$/, '')}`}
-            class="block group"
-            data-animate
-            data-delay={String(i * 100 + 100)}
-          >
-            <article class="bg-bg-card border border-border rounded-xl overflow-hidden card-hover transition-all">
-              {post.data.image && (
-                <div class="aspect-[5/2] overflow-hidden">
-                  <img 
-                    src={post.data.image} 
-                    alt={post.data.title}
-                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-              )}
-              <div class="p-6 sm:p-8">
-                <div class="flex items-center gap-3 mb-3">
-                  <time class="text-text-muted text-sm font-mono">
-                    {post.data.date.toLocaleDateString('en-US', { 
-                      year: 'numeric', month: 'long', day: 'numeric' 
-                    })}
-                  </time>
-                  <span class="text-border">·</span>
-                  <div class="flex gap-2">
-                    {post.data.tags.slice(0, 3).map(tag => (
-                      <span class="text-xs px-2 py-0.5 rounded-full bg-accent-subtle text-accent border border-accent/20 font-mono">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <h2 class="text-xl sm:text-2xl font-bold text-text-primary group-hover:text-accent transition-colors mb-2">
-                  {post.data.title}
-                </h2>
-                <p class="text-text-secondary text-sm sm:text-base leading-relaxed">
-                  {post.data.description}
-                </p>
-                <div class="mt-4 flex items-center gap-2 text-accent text-sm font-medium">
-                  <span>Read article</span>
-                  <span class="group-hover:translate-x-1 transition-transform">→</span>
-                </div>
-              </div>
-            </article>
-          </a>
+      <div class="space-y-14">
+        {groupedPosts.map((group, groupIndex) => (
+          <section id={group.id} data-animate data-delay={String(groupIndex * 100 + 100)}>
+            <div class="flex items-center gap-4 mb-4">
+              <h2 class="text-2xl sm:text-3xl font-bold text-text-primary">{group.category}</h2>
+              <span class="h-px bg-border flex-1"></span>
+            </div>
+            <p class="text-text-secondary max-w-2xl mb-6">{group.description}</p>
+
+            <div class="space-y-8">
+              {group.posts.map((post) => (
+                <a 
+                  href={`/blog/${post.id.replace(/\.md$/, '')}`}
+                  class="block group"
+                >
+                  <article class="bg-bg-card border border-border rounded-xl overflow-hidden card-hover transition-all">
+                    {post.data.image && (
+                      <div class="aspect-[5/2] overflow-hidden">
+                        <img 
+                          src={post.data.image} 
+                          alt={post.data.title}
+                          class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                          style={post.data.imagePosition ? `object-position: ${post.data.imagePosition};` : undefined}
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    <div class="p-6 sm:p-8">
+                      <div class="flex items-center gap-3 mb-3 flex-wrap">
+                        <span class="text-xs px-2 py-0.5 rounded-full bg-accent-subtle text-accent border border-accent/20 font-mono">
+                          {post.data.category}
+                        </span>
+                        <span class="text-border">·</span>
+                        <time class="text-text-muted text-sm font-mono">
+                          {post.data.date.toLocaleDateString('en-US', { 
+                            year: 'numeric', month: 'long', day: 'numeric' 
+                          })}
+                        </time>
+                        <span class="text-border">·</span>
+                        <div class="flex gap-2">
+                          {post.data.tags.slice(0, 3).map(tag => (
+                            <span class="text-xs px-2 py-0.5 rounded-full bg-accent-subtle text-accent border border-accent/20 font-mono">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <h3 class="text-xl sm:text-2xl font-bold text-text-primary group-hover:text-accent transition-colors mb-2">
+                        {post.data.title}
+                      </h3>
+                      <p class="text-text-secondary text-sm sm:text-base leading-relaxed">
+                        {post.data.description}
+                      </p>
+                      <div class="mt-4 flex items-center gap-2 text-accent text-sm font-medium">
+                        <span>Read article</span>
+                        <span class="group-hover:translate-x-1 transition-transform">→</span>
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              ))}
+            </div>
+          </section>
         ))}
       </div>
 

@@ -1,6 +1,7 @@
 ---
 title: "I Stopped Prompting AI. Here's What I Do Instead."
 description: "The real unlock isn't a better AI tool. It's building a system where AI does the work before you even sit down."
+category: "AI Systems"
 date: 2026-03-18
 image: /images/blog/agentic-orchestration-banner.png
 tags: ["AI", "AgenticAI", "ProductManagement", "BuildInPublic"]

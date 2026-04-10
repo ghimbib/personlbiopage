@@ -1,6 +1,7 @@
 ---
 title: "The Free AI Model Cost Me More Than the Expensive One"
 description: "Why price-per-token is the wrong metric. Cost isn't what you pay in tokens. It's what you pay in time, failed iterations, and rework."
+category: "AI Systems"
 date: 2026-03-20
 image: /images/blog/zero-cost-fleet/hero-banner.png
 tags: ["AI", "AgenticAI", "BuildInPublic", "OpenSource"]

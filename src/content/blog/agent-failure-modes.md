@@ -1,6 +1,7 @@
 ---
 title: "What AI Agents Are Bad At, and Why That Matters More Than What They’re Good At"
 description: "A task in my system emitted task.picked_up every thirty seconds for nearly an hour before it finally failed. That taught me more about trust than any clean demo ever could."
+category: "AI Systems"
 date: 2026-04-08
 image: /images/blog/agent-failure-modes/hero-banner.png
 tags: ["AI", "AgenticAI", "Reliability", "Systems"]

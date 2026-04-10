@@ -1,6 +1,7 @@
 ---
 title: "I Didn't Plan the Guardrails. My Agents Made Me Build Them."
 description: "Running a 9-agent AI fleet taught me that the guardrails nobody wants to build are the ones that make everything else possible. Five failures and the systems they forced me to create."
+category: "AI Systems"
 date: 2026-04-01
 image: /images/blog/ai-governance-guardrails/hero-banner.jpg
 tags: ["AI", "AgenticAI", "Governance", "BuildInPublic"]
