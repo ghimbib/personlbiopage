@@ -42,6 +42,7 @@ const { Content } = await render(post);
             src={post.data.image} 
             alt={post.data.title}
             class="w-full h-full object-cover"
+            style={post.data.imagePosition ? `object-position: ${post.data.imagePosition};` : undefined}
           />
         </div>
       )}
