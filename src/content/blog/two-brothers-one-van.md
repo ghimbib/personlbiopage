@@ -6,7 +6,7 @@ image: /images/blog/two-brothers-one-van/start.jpg
 imagePosition: "center 22%"
 tags: ["Endurance", "Challenge", "Story"]
 draft: false
-hidden: true
+hidden: false
 ---
 
 From the outside, this looks like nothing.
