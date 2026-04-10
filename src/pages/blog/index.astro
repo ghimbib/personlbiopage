@@ -6,7 +6,7 @@ import SubscribeCTA from '../../components/SubscribeCTA.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog'))
-  .filter(post => !post.data.draft)
+  .filter(post => !post.data.draft && !post.data.hidden)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
