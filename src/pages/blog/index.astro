@@ -34,42 +34,45 @@ const groupedPosts = categoryOrder
 
 <Layout title="Blog — Bibek Ghimire" description="Thoughts on AI, product management, and building in public.">
   <Nav />
-  <main class="pt-32 pb-20 px-6">
+  <main class="pt-24 md:pt-32 pb-16 md:pb-20 px-5 sm:px-6">
     <div class="max-w-4xl mx-auto">
-      <div class="mb-16" data-animate>
+      <div class="mb-10 md:mb-16" data-animate>
         <div class="flex items-center gap-4 mb-4">
           <span class="text-accent font-mono text-sm font-bold">blog</span>
           <span class="h-px bg-border flex-1"></span>
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        <h1 class="text-4xl md:text-5xl font-bold leading-[0.95] mb-4">
           Lessons from building<span class="gradient-text">.</span>
         </h1>
-        <p class="text-text-secondary text-lg max-w-2xl">
+        <p class="text-text-secondary text-base sm:text-lg max-w-2xl leading-relaxed">
           What I'm learning about AI agents, product management, shipping software, and the occasional story that matters enough to write down.
         </p>
-        <div class="flex flex-wrap gap-3 mt-8">
-          {groupedPosts.map((group) => (
-            <a
-              href={`#${group.id}`}
-              class="inline-flex items-center gap-2 px-3 py-2 rounded-full border border-border bg-bg-card text-sm text-text-secondary hover:text-accent hover:border-accent/30 transition-colors"
-            >
-              <span>{group.category}</span>
-              <span class="text-text-muted">{group.posts.length}</span>
-            </a>
-          ))}
+        <div class="mt-6">
+          <p class="text-xs uppercase tracking-[0.18em] text-text-muted font-mono mb-3">Browse by type</p>
+          <div class="flex gap-3 overflow-x-auto pb-2 -mx-1 px-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
+            {groupedPosts.map((group) => (
+              <a
+                href={`#${group.id}`}
+                class="shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-full border border-border bg-bg-card text-sm text-text-secondary hover:text-accent hover:border-accent/30 transition-colors"
+              >
+                <span>{group.category}</span>
+                <span class="text-text-muted">{group.posts.length}</span>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div class="space-y-14">
+      <div class="space-y-10 md:space-y-14">
         {groupedPosts.map((group, groupIndex) => (
           <section id={group.id} data-animate data-delay={String(groupIndex * 100 + 100)}>
-            <div class="flex items-center gap-4 mb-4">
-              <h2 class="text-2xl sm:text-3xl font-bold text-text-primary">{group.category}</h2>
+            <div class="flex items-center gap-4 mb-3">
+              <h2 class="text-xl sm:text-3xl font-bold text-text-primary">{group.category}</h2>
               <span class="h-px bg-border flex-1"></span>
             </div>
-            <p class="text-text-secondary max-w-2xl mb-6">{group.description}</p>
+            <p class="text-text-secondary text-sm sm:text-base max-w-2xl mb-5 leading-relaxed">{group.description}</p>
 
-            <div class="space-y-8">
+            <div class="space-y-6 sm:space-y-8">
               {group.posts.map((post) => (
                 <a 
                   href={`/blog/${post.id.replace(/\.md$/, '')}`}
@@ -87,24 +90,22 @@ const groupedPosts = categoryOrder
                         />
                       </div>
                     )}
-                    <div class="p-6 sm:p-8">
+                    <div class="p-5 sm:p-8">
                       <div class="flex items-center gap-3 mb-3 flex-wrap">
-                        <span class="text-xs px-2 py-0.5 rounded-full bg-accent-subtle text-accent border border-accent/20 font-mono">
-                          {post.data.category}
-                        </span>
-                        <span class="text-border">·</span>
                         <time class="text-text-muted text-sm font-mono">
                           {post.data.date.toLocaleDateString('en-US', { 
                             year: 'numeric', month: 'long', day: 'numeric' 
                           })}
                         </time>
-                        <span class="text-border">·</span>
-                        <div class="flex gap-2">
-                          {post.data.tags.slice(0, 3).map(tag => (
-                            <span class="text-xs px-2 py-0.5 rounded-full bg-accent-subtle text-accent border border-accent/20 font-mono">
-                              {tag}
-                            </span>
-                          ))}
+                        <div class="hidden sm:flex items-center gap-3">
+                          <span class="text-border">·</span>
+                          <div class="flex gap-2">
+                            {post.data.tags.slice(0, 3).map(tag => (
+                              <span class="text-xs px-2 py-0.5 rounded-full bg-accent-subtle text-accent border border-accent/20 font-mono">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       </div>
                       <h3 class="text-xl sm:text-2xl font-bold text-text-primary group-hover:text-accent transition-colors mb-2">
