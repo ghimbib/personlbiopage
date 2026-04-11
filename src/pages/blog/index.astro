@@ -47,16 +47,19 @@ const groupedPosts = categoryOrder
         <p class="text-text-secondary text-base sm:text-lg max-w-2xl leading-relaxed">
           What I'm learning about AI agents, product management, shipping software, and the occasional story that matters enough to write down.
         </p>
-        <div class="mt-6">
+        <div class="mt-6 rounded-2xl border border-border bg-bg-card/60 p-3 sm:p-4">
           <p class="text-xs uppercase tracking-[0.18em] text-text-muted font-mono mb-3">Browse by type</p>
-          <div class="flex gap-3 overflow-x-auto pb-2 -mx-1 px-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
+          <div class="grid grid-cols-1 gap-2 sm:flex sm:flex-wrap sm:gap-3">
             {groupedPosts.map((group) => (
               <a
                 href={`#${group.id}`}
-                class="shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-full border border-border bg-bg-card text-sm text-text-secondary hover:text-accent hover:border-accent/30 transition-colors"
+                class="group flex items-center justify-between rounded-xl border border-border bg-bg px-4 py-3 text-sm text-text-secondary hover:border-accent/30 hover:bg-bg-card transition-colors sm:min-w-[200px]"
               >
-                <span>{group.category}</span>
-                <span class="text-text-muted">{group.posts.length}</span>
+                <span class="font-medium text-text-primary">{group.category}</span>
+                <span class="inline-flex items-center gap-2 text-xs font-mono text-text-muted">
+                  <span>{group.posts.length}</span>
+                  <span class="text-accent group-hover:translate-x-0.5 transition-transform">→</span>
+                </span>
               </a>
             ))}
           </div>
