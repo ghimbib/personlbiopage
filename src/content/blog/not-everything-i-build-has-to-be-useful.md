@@ -1,6 +1,6 @@
 ---
 title: "Not Everything I Build Has to Be Useful"
-description: "After too much useful software work, I started building Doko Dash, a tiny Nepali-inspired platformer with rice bowls, momo pickups, and zero respectable business case. It reminded me that not every project needs to explain itself before it gets to exist."
+description: "After too much useful software work, I started building Doko Dash, a Nepali-inspired platformer with Bir, Aasha, player-picked names, and five complete levels. It reminded me that not every project needs to explain itself before it gets to exist."
 category: "Personal Stories"
 date: 2026-04-28T12:00:00-06:00
 image: /images/blog/not-everything-i-build-has-to-be-useful/hero-banner.png
@@ -10,7 +10,7 @@ draft: false
 
 This week I had one tab full of agents, workflow cleanup, and CRM logic.
 
-The next tab had a small hill kid named Aayan landing too hard after a jump because I still had not fixed his recovery.
+The next tab had Bir, Aasha, player-picked names, and me fussing over how five complete levels were supposed to feel instead of just function.
 
 That is not a mature workflow. I recommend it anyway.
 
@@ -18,11 +18,11 @@ The respectable side of my workspace is easy to explain. Agents triage work. Aut
 
 Then there is Doko Dash.
 
-Doko Dash is a web-first 2D platformer I am building around terrace fields, rice bowls, momo pickups, touch controls, and a kid named Aayan.
+Doko Dash is a web-first 2D platformer I am building around terrace fields, rice bowls, momo pickups, touch controls, Bir, Aasha, player-picked names, and five complete levels.
 
-Right now it is still in proof-stage graybox mode. One hero. One world. One short level. One enemy. One hazard. One checkpoint. One finish gate. Basic on-screen buttons. Background shapes that are still mostly polite geometry.
+It is not just one tiny graybox proof anymore. The shape is bigger now. Multiple characters. Players get to name them. Five complete levels. More real decisions. More places for something to feel delightful or annoying.
 
-There is no respectable enterprise explanation for why I care whether the first terrace gap feels fair on a phone browser.
+There is no respectable enterprise explanation for why I care whether Bir and Aasha feel distinct, whether player naming adds charm instead of friction, or whether the fifth level earns its difficulty instead of becoming a jerk.
 
 I care anyway.
 
@@ -46,7 +46,7 @@ It is here because I wanted something bright in a workspace that had gotten extr
 
 One of the funniest parts of this project is how quickly my brain tries to drag it back into adulthood.
 
-I open the game and think I am about to do something unserious. Then five minutes later I am arguing with myself about whether Aayan should feel slightly heavier and safer on landing, whether the touch buttons are thumb-friendly without hiding too much of the level, whether the first monkey shows up too early, whether the rice bowl cluster is luring me into a stupid jump, and whether the momo should appear at exactly the moment before the final challenge when the level starts getting cocky.
+I open the game and think I am about to do something unserious. Then five minutes later I am arguing with myself about whether Bir and Aasha feel meaningfully different, whether player-picked names make the whole thing feel more personal, whether the touch buttons are thumb-friendly without hiding too much of the level, whether the first monkey shows up too early, and whether the later levels ramp up like a challenge instead of a punishment.
 
 That is still design work.
 
@@ -88,13 +88,13 @@ I already had my little side quest with Phaser. It got evaluated, rejected, and 
 
 The current rule set is delightfully unglamorous.
 
-Stop chasing engines. Stop expanding scope. Prove the loop before the polish. Get movement feel right. Get touch controls right. Make one short level actually fun. Then earn the next decision.
+Stop chasing engines. Stop adding nonsense just because it sounds impressive. Get movement feel right. Get touch controls right. Make the actual levels worth playing. Then earn the next decision.
 
 That discipline is part of why Doko Dash feels so clean to me.
 
 It is playful, but it is not sloppy.
 
-It is small on purpose. One hero instead of a cast. One world instead of a grand tour of every idea I have ever had. One enemy instead of a zoo. One level instead of a fake empire. No boss fights. No App Store packaging. No sprawling universe trying to happen before a single web slice feels good on desktop and phone.
+It is still restrained on purpose. Not because it stayed tiny, but because it has not turned into a fake empire. Bir and Aasha are enough. Five complete levels are enough. Letting players pick names is enough. I do not need a hundred systems, twelve worlds, and a lore bible thick enough to injure someone before the thing is genuinely fun on desktop and phone.
 
 Honestly, that restraint might be the sassiest part of the whole project.
 
@@ -116,7 +116,7 @@ But I do not want to smuggle fun back into my life disguised as an optimization 
 
 Sometimes the honest reason to build something is just that it pulls on you.
 
-Right now I want one corner of my workspace where a kid in a topi runs through terrace fields, picks up rice bowls, deals with one monkey, grabs a momo before the last stretch, and does not once stop to explain his market size.
+Right now I want one corner of my workspace where Bir and Aasha can move through terrace fields, players can pick names, rice bowls and momos can matter more than dashboards, and five complete levels can exist without once stopping to explain their market size.
 
 That project is not less serious to me because it is playful.
 
