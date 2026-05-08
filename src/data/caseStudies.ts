@@ -18,46 +18,73 @@ export const caseStudies: CaseStudy[] = [
     slug: 'orbex-product-systems-growth',
     title: 'Orbex Group: aligning product, systems, and commercial execution',
     company: 'Orbex Group',
-    role: 'Product Strategy & Execution',
+    role: 'Product, GTM & Marketing Operations',
     period: 'Oct 2023 - Mar 2026',
-    teaser: 'A short case study on connecting industrial product strategy, CRM and workflow systems, analytics, and GTM into a clearer operating model.',
-    summary: 'Orbex needed stronger connective tissue between product strategy, business priorities, and the systems that supported commercial execution. The work cut across industrial hardware, CRM and workflow design, analytics, and go-to-market decisions.',
-    tags: ['Industrial Systems', 'CRM / Workflow', 'GTM', 'Product Strategy'],
-    challenge: 'The challenge was not one isolated feature. It was a broader product and systems problem: multiple product lines, commercial goals, and internal workflows needed a tighter roadmap and better operational clarity.',
+    teaser: 'A short case study on connecting industrial product strategy, CRM and workflow systems, analytics, campaign operations, and GTM into a clearer operating model.',
+    summary: 'Orbex needed stronger connective tissue between product strategy, business priorities, marketing execution, and the systems that supported commercial work. The work cut across industrial hardware, CRM and workflow design, analytics, trade shows, ABM, budget allocation, and go-to-market decisions.',
+    tags: ['Industrial Systems', 'CRM / Workflow', 'GTM', 'Marketing Ops'],
+    challenge: 'The challenge was not one isolated feature. Multiple product lines, campaign channels, commercial goals, and internal workflows needed a tighter roadmap, better lead-quality discipline, and clearer operating standards.',
     responsibilities: [
-      'Owned product strategy across industrial hardware and supporting internal systems.',
-      'Helped shape CRM and workflow thinking around how leads, funnel quality, and commercial execution actually worked.',
-      'Aligned product, operations, analytics, and go-to-market stakeholders around clearer priorities.',
-      'Supported funding conversations by connecting roadmap direction to business value.'
+      'Owned product strategy across industrial hardware, marketing operations, CRM, and supporting internal systems.',
+      'Reallocated spend from low-quality Google Ads into ABM and trade show channels with stronger lead quality.',
+      'Defined audience segmentation by industry, job title, and geography, then partnered with vendors to source contacts and execute campaigns.',
+      'Served as final approver for campaign copy, landing pages, ads, trade show collateral, product claims, specs, and brand messaging.',
+      'Designed CRM requirements, follow-up rules, dashboards, lead-source workflows, and standard process documentation.'
     ],
     outcomes: [
       'Created a clearer roadmap across hardware, systems, and commercial priorities.',
-      'Improved lead quality and funnel discipline through better systems thinking.',
+      'Converted roughly 20 low-quality Google Ads leads per month into roughly 20 high-quality ABM leads in the first month.',
+      'Improved lead quality and funnel discipline through better systems, targeting, and campaign review.',
       'Helped secure funding by making the product and growth story easier to understand and back.'
     ],
-    whyItMattered: 'This is the kind of product work that usually gets missed in tidy portfolio writeups. It was messy, cross-functional, and operationally important. The value came from creating clarity people could execute against.'
+    whyItMattered: 'This is the kind of work that usually gets missed in tidy portfolio writeups. It was product, GTM, analytics, and program execution at the same time. The value came from creating clarity people could execute against.'
   },
   {
     slug: 'viessmann-connected-products-platforms',
     title: 'Viessmann: leading a portfolio across apps, tools, portals, and connected products',
     company: 'Viessmann',
-    role: 'Portfolio & Product Leadership',
+    role: 'Portfolio, Program & GTM Leadership',
     period: 'Jan 2021 - Aug 2023',
-    teaser: 'A short case study on managing a multi-product portfolio across customer apps, internal tools, and connected climate-tech platforms.',
-    summary: 'At Viessmann, the work spanned multiple product surfaces, including apps, portals, design tools, and connected products. The job was to improve focus, launches, and customer experience across a portfolio instead of treating each product in isolation.',
-    tags: ['Climate Tech', 'Connected Products', 'Portfolio Management', 'Customer Experience'],
-    challenge: 'The portfolio had real breadth. That created opportunity, but it also meant prioritization, launch coordination, and product experience had to be managed across multiple teams and product types at once.',
+    teaser: 'A short case study on managing a multi-product portfolio across customer apps, internal tools, connected platforms, launch programs, and regional GTM work.',
+    summary: 'At Viessmann, the work spanned multiple product surfaces, including apps, portals, design tools, connected products, collateral standards, and sales programs. The job was to improve focus, launches, and customer experience across a portfolio instead of treating each product in isolation.',
+    tags: ['Climate Tech', 'Connected Products', 'Portfolio Management', 'Program Execution'],
+    challenge: 'The portfolio had real breadth. That created opportunity, but it also meant prioritization, launch coordination, product experience, collateral quality, and regional sales execution had to be managed across multiple teams and product types at once.',
     responsibilities: [
       'Led portfolio-level product work across apps, portals, design tools, and connected products.',
       'Drove prioritization and roadmap decisions across multiple product surfaces.',
-      'Worked across functions to improve launches, execution discipline, and customer experience.',
-      'Balanced product breadth with the need for sharper focus and clearer delivery.'
+      'Created launch plans, stakeholder updates, early-adopter feedback loops, UAT plans, and release-readiness workflows.',
+      'Defined US and Canada collateral standards, trade show product selection, and channel sales programs.',
+      'Used user feedback and US/Canada program variants to iterate copy, workflows, launch readiness, and market execution.'
     ],
     outcomes: [
       'Improved coordination across a multi-product portfolio.',
-      'Supported launches and growth across digital and connected product surfaces.',
-      'Helped create a more coherent customer experience across the portfolio.'
+      'Supported launches and growth across digital and connected product surfaces, including five products and $5M in incremental revenue.',
+      'Helped create a more coherent customer experience across the portfolio.',
+      'Drove enough demand through channel programs that supply constraints became a downstream issue.'
     ],
-    whyItMattered: 'This was strong portfolio product work, not just feature management. It required judgment across product strategy, execution, and customer experience in a business where hardware and software were tightly connected.'
+    whyItMattered: 'This was strong portfolio and program work, not just feature management. It required judgment across product strategy, execution, customer experience, sales enablement, and market readiness in a business where hardware and software were tightly connected.'
+  },
+  {
+    slug: 'baker-engineer-focused-sales-enablement',
+    title: 'Baker Hughes: turning technical product data into engineer-ready demand assets',
+    company: 'Baker Hughes',
+    role: 'Product, Program & Sales Enablement',
+    period: 'Jun 2012 - Sep 2020',
+    teaser: 'A short case study on using landing pages, technical product data, trade show insight, and regional case studies to support drill-bit growth.',
+    summary: 'At Baker Hughes, the work combined product management, engineering context, digital sales enablement, and field intelligence. For the drill bits product line, the goal was to make technical attributes easier for engineers to evaluate and easier for field teams to share.',
+    tags: ['Energy', 'Sales Enablement', 'Landing Pages', 'Technical GTM'],
+    challenge: 'Field teams needed current, technically useful product information that engineers could actually evaluate. Printed collateral could become outdated quickly, and regional proof points needed to be easier to find and share.',
+    responsibilities: [
+      'Designed landing-page content for the drill bits product line so engineers could extract meaningful technical data quickly.',
+      'Created geographically relevant case studies and linked them from product pages to support demand generation.',
+      'Attended trade shows to gather market, customer, and competitive intelligence, then translated that insight into campaigns and sales-support content.',
+      'Helped move field reps from outdated printed assets toward current digital assets they could email and share more easily.'
+    ],
+    outcomes: [
+      'Supported growth in the applied drill bits business area from roughly $500K per year to roughly $2M per year, alongside broader product and sales execution.',
+      'Improved sales enablement by giving field teams current, shareable digital assets instead of static printed collateral.',
+      'Made technical product attributes easier for engineer buyers to inspect and compare.'
+    ],
+    whyItMattered: 'The work sat between product, marketing, analytics, and field execution. It made technical selling easier by translating complex product information into assets that engineers and sales teams could actually use.'
   }
 ];
