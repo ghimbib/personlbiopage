@@ -12,7 +12,7 @@ Most of my work has a clean adult explanation.
 
 Agents. Workflows. CRM logic. Research systems. The kind of software that stands up straight, uses indoor voice, and can explain its budget.
 
-Then I open [Doko Dash](https://dokodash.bibekghimire.com/).
+Then I open [Doko Dash](https://dokodash.app/).
 
 Doko Dash is a browser game. Phaser, Vite, Bir, Asha, rice, puddles, touch controls, a four-level run, and an Everest level that now has gusts because apparently I enjoy arguing with wind.
 
@@ -44,4 +44,4 @@ For me, right now, that corner has rice bowls, weird puddles, mobile buttons, an
 
 That feels healthy.
 
-And if you want to see the tiny, windy thing itself, [Doko Dash is playable here](https://dokodash.bibekghimire.com/).
+And if you want to see the tiny, windy thing itself, [Doko Dash is playable here](https://dokodash.app/).
