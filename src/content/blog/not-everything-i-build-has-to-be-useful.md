@@ -1,6 +1,6 @@
 ---
 title: "Not Everything I Build Has to Be Useful"
-description: "Most of my work is useful software. Then I open Doko Dash, pick Bir or Asha, worry about square puddles and Everest gusts, and remember that not every build needs a business case."
+description: "Most of my work has a clean adult explanation. Then I open Doko Dash, argue with square puddles and Everest gusts, and remember that not every build needs a business case."
 category: "Personal Stories"
 date: 2026-04-28T12:00:00-06:00
 image: /images/blog/not-everything-i-build-has-to-be-useful/hero-banner.png
@@ -10,38 +10,46 @@ draft: false
 
 Most of my work has a clean adult explanation.
 
-Agents. Workflows. CRM logic. Research systems. The kind of software that stands up straight, uses indoor voice, and can explain its budget.
+Agents. Workflows. CRM logic. Research systems. Software that stands up straight, uses indoor voice, and can explain why it deserves to exist.
 
 Then I open [Doko Dash](https://dokodash.app/).
 
-Doko Dash is a browser game. Phaser, Vite, Bir, Asha, rice, puddles, touch controls, a four-level run, and an Everest level that now has gusts because apparently I enjoy arguing with wind.
+Doko Dash is a browser game I built because my nephews asked for a Nepali game. That is the whole serious business case. Two kids wanted something fun, so now I have Bir, Asha, rice bowls, momo powerups, puddles, touch controls, and an Everest level with gusts because apparently the mountain needed opinions.
 
-That is already a much better sentence than "I optimized a process".
+This is not how my useful projects usually start.
 
-It also started for a very simple reason: my nephews asked for a Nepali game.
+Useful projects arrive with posture. They have a problem statement. They have a user pain. They have a grim little paragraph about wasted time and operational drag. Before I touch the keyboard, they are already wearing a badge.
 
-The part I like is how unserious it sounds from the outside and how precise it gets the second you touch it.
+Doko Dash arrived as a request from my nephews and then immediately became weird in the best way.
 
-Are the puddles too square. Is Bir meaningfully sturdier than Asha. Does hero lock make the run feel cleaner. Should food heal health or stay as power. Does the mobile results panel feel satisfying or just busy. Is Everest hard in a fun way or hard in an "I hate the person who made this" way.
+Are the puddles too square. Is Bir supposed to feel sturdier than Asha, or is that just something I made up in my head. Should food restore health or stay as score pressure. Does hero lock make the run cleaner. Does the mobile results panel feel satisfying, or does it look like a tiny airport dashboard.
 
-Those are excellent problems.
+These are excellent problems.
 
-They do not pretend to be important in the LinkedIn way. They are just real. A player says the puddles look fake, so now I care about puddles. A player asks why eating food does not restore health, so now that becomes a real design question. Someone points out mid-run hero swapping is wrong, so the fix is hero lock for the full run.
+They are not important in the resume-bullet sense. Nobody is going to give me a medal because a rice bowl arc feels nicer on a phone. But the questions are still real. A player says the puddles look fake, and suddenly I am a person with puddle standards. Someone notices mid-run hero swapping feels wrong, and now hero lock matters. Everest wind is either a fun obstacle or a personal insult, and the difference is a few small tuning choices.
 
-I love that kind of feedback loop.
+That is craft. It is also funny.
 
-Useful work can make every new idea show up wearing a tie. What problem do you solve. What workflow do you improve. Why should you exist.
+I like that combination more than I expected. Playful does not mean sloppy. A tiny platformer still has pacing, feedback, controls, affordances, difficulty curves, and all the small invisible decisions that make something feel fair instead of annoying.
+
+The difference is that the game does not ask me to defend its existence before I am allowed to care.
+
+Useful work can train a strange reflex into you. Every new idea shows up and immediately has to pass inspection. What problem does this solve. Who is the customer. Where is the workflow leak. What is the measurable outcome.
+
+Those are good questions. I ask them all the time. I have built a lot of useful things because I asked them clearly.
+
+But if I only ask those questions, a part of my brain starts shrinking into a committee room. Everything becomes a case. Every impulse has to become a plan. Even curiosity starts looking for a quarterly strategy deck to hide behind.
 
 Doko Dash is good for me because it refuses that meeting.
 
-It wants to know if the rice chase makes the composite score more addictive. It wants to know if Bir and Asha feel distinct in your hands. It wants to know if level 4 feels like a finish line or a prank.
+It does not automate anything. It does not clean up a process. It does not need to pretend that rice, momo, puddles, and mountain wind are secretly a productivity framework. The point is simpler than that. I wanted to make something my nephews could play. Then I wanted it to feel better. Then I wanted to keep going.
 
-That is still craft. It is still discipline. It is just not pretending to be a quarterly strategy deck.
+That last part matters.
 
-I think builders need one corner of their life where the goal is not "can I justify this" but "do I want to keep going".
+I do not think every build needs to become a company-shaped object. I do not want every interesting idea to walk into my life already dressed for procurement. Some things should be allowed to stay small, odd, specific, and alive.
 
-For me, right now, that corner has rice bowls, weird puddles, mobile buttons, and a windy Everest level.
+For me, right now, that thing is a tiny Nepali platformer with rice bowls, stubborn puddles, two heroes, touch controls, and an Everest level that keeps trying to shove players off a ledge.
 
-That feels healthy.
+That is enough.
 
-And if you want to see the tiny, windy thing itself, [Doko Dash is playable here](https://dokodash.app/).
+And if you want to see the small, windy thing itself, [Doko Dash is playable here](https://dokodash.app/).
